@@ -1,32 +1,56 @@
 import { useState } from "react";
-import { useAuth } from "../Components/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function Login(){
+function Login() {
 
-    const {login} =useAuth();
-    const [email,setEmail]=useState('');
-    const [password,setPassword]=useState('');
-    const navigate =useNavigate();
+    const { login } = useAuth();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleLogin= ()=>{
-        if(login(email,password)){
+    const handleLogin = () => {
+        if (login(email, password)) {
             navigate('/dashboard')
         }
-        else{
+        else {
             alert('Invalid Password or Email')
         }
 
     }
 
-    return(
-        <div style={{  padding:'15px',alignContent:"center",justifyItems:'center'}}>
-        <div style={{backgroundColor:'#cf4d19ff', width:'300px', marginLeft:'40%', padding:'15px',margin:'10px',alignContent:"center",textAlign:'center'}}>
-            <input style={{ padding:'15px',margin:'10px'}}  type="email" value={email} placeholder="Enter Email" onChange={(e)=>setEmail(e.target.value)} /> <br />
-            <input style={{ padding:'15px',margin:'10px'}} type="password" value={password} placeholder="Enter Password" onChange={(e)=>setPassword(e.target.value)} /> <br /> <br />
-            <button style={{backgroundColor:'#17c02eff', padding:'15px',margin:'5px', borderRadius:'10px',fontWeight:'bolder',border:'1px solid black', marginLeft:"10px"}}  onClick={handleLogin}>Login</button>
-        </div>
-        </div>
+    return (
+    
+
+        <section className="flex justify-center min-h-screen items-center px-4 sm:px-6 lg:px-8">
+            <div className="bg-green-200 p-6 sm:p-10 md:p-16 lg:p-20 m-4 sm:m-6 md:m-8 lg:m-10 w-full sm:w-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl rounded-lg">
+                <div className="w-full flex justify-center">
+                    <div className="bg-green-800 w-full max-w-sm p-6 sm:p-8 md:p-10 rounded-2xl flex flex-col items-center">
+                        <input
+                            className="p-3 mb-4 bg-amber-100 rounded w-full"
+                            type="email"
+                            value={email}
+                            placeholder="Enter Email"
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <input
+                            className="p-3 mb-6 bg-amber-100 rounded w-full"
+                            type="password"
+                            value={password}
+                            placeholder="Enter Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <button
+                            className="bg-rose-300 p-2 w-28 rounded-2xl font-bold hover:bg-rose-400 transition-colors"
+                            onClick={handleLogin}
+                        >
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     )
 
 
