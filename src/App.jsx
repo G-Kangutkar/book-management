@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import AuthProvider from './context/AuthContext'
 import Login from './Pages/Login'
 import Dashboard from './Pages/Dashboard'
+import ProtectedRoute from './Components/ProtectedRoute'
 // import Navbar from './Components/Navbar'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Login/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/dashboard' element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
       
    </Routes>
 

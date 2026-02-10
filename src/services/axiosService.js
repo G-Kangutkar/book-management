@@ -77,6 +77,18 @@ function axiosService(){
                 book.id === id ? { ...book, status: newStatus } : book
             ));
             
+//             setData(prev =>
+//   prev.map(book =>
+//     book.id === id
+//       ? {
+//           ...book,
+//           status: newStatus,
+//           count: newStatus === "Available" ? book.count + 1 : book.count - 1
+//         }
+//       : book
+//   )
+// );
+
             return response.data;
             
         } catch (error) {

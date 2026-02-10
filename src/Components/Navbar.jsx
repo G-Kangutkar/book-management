@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-function Navbar() {
+function Navbar({ searchTerm, setSearchTerm }) {
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -17,11 +17,20 @@ function Navbar() {
                             <span className="md:hidden">Books</span>
                         </a>
                     </div>
+                    <div className="flex-1 max-w-md mx-2 sm:mx-4">
+                        <input
+                            type="text"
+                            placeholder="Search books..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="w-full px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        />
+                    </div>
 
                     <button
                         type="submit"
                         onClick={handleLogout}
-                        className="bg-rose-700 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base rounded-lg sm:rounded-xl text-white hover:bg-rose-800 transition-colors whitespace-nowrap flex-shrink-0"
+                        className="bg-rose-700 px-3 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base rounded-lg sm:rounded-xl text-white hover:bg-rose-800 transition-colors whitespace-nowrap shrink-0"
                     >
                         <span className="hidden sm:inline">Log out</span>
                         <span className="sm:hidden">Logout</span>
