@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function Navbar({ searchTerm, setSearchTerm }) {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        navigate("/")
+        navigate("/");
+        toast.success('🚀 Logged out successfully!');
     }
     return (
 

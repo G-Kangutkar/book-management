@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { toast } from "react-toastify";
 
 
 function BookCard({ data, deleteData, updateData, toggle }) {
@@ -6,14 +7,16 @@ function BookCard({ data, deleteData, updateData, toggle }) {
     const EditAuthor = useCallback(async () => {
         const EditName = prompt('enter Author name: ',);
         if (EditName !== null) {
-            await updateData(data.id, { author: EditName  })
+            await updateData(data.id, { author: EditName  });
+            toast.success("✏️ Editied book author successfully!")
             // setData(prev=>prev.map(book=> book.id === data.id ?{...book, author:EditName}:book))
         }
     }, [data.id, updateData]);
 
     const deleteBook = useCallback(async () => {
         console.log('1id', data.id)
-        await deleteData(data.id)
+        await deleteData(data.id);
+        toast.success('🗑️ Deleted book successfully!')
         // setData(prev=>prev.filter(book=>book.id !== data.id))
     }, [data.id, deleteData]);
 

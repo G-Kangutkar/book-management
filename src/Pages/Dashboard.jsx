@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import axiosService from "../services/axiosService";
 import BookCard from "../Components/BookCard";
 import Navbar from "../Components/Navbar";
+import { toast } from "react-toastify";
 
 
 function Dashboard (){
@@ -29,6 +30,7 @@ function Dashboard (){
             // count: formData.count
         };
         addData(newBook);
+        toast.success('📚 Book added successfully!')
         setFormData({//id:Date.now(),
              title:'', author:'',status:'Available',
             //  count:''

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Bounce, toast } from 'react-toastify';
 
 function Login() {
 
@@ -11,16 +12,18 @@ function Login() {
 
     const handleLogin = () => {
         if (login(email, password)) {
+            toast.success('🔐 Login Successfully!')
             navigate('/dashboard')
         }
         else {
-            alert('Invalid Password or Email')
+            toast.error('🛠️ Invalid Password or Email!');
+            // alert('Invalid Password or Email')
         }
 
     }
 
     return (
-    
+
 
         <section className="flex justify-center min-h-screen items-center px-4 sm:px-6 lg:px-8">
             <div className="bg-green-200 p-6 sm:p-10 md:p-16 lg:p-20 m-4 sm:m-6 md:m-8 lg:m-10 w-full sm:w-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl rounded-lg">

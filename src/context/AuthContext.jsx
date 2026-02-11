@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 const AuthContext = createContext();
@@ -20,7 +21,7 @@ const AuthProvider=({children})=>{
     const logout = useCallback(()=>{
         setIsLogin(false);
         navigate('/');
-    },[]);
+    },[navigate]);
 
     return(
         <AuthContext.Provider value={{isLogin,login,logout}}>
