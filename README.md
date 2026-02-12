@@ -14,7 +14,12 @@ A simple book management app to add, edit, delete, search and manage book availa
 
 ![Dashboard Page Screenshot](src/assets/screenshotHome.png)
 
-
+<div align="center">
+  <img src="/screenshotLogin.png" alt="Screenshot of the application login page">
+</div>
+<div align="center">
+  <img src="/screenshotHome.png" alt="Screenshot of the application home page">
+</div>
 ## ✨ Features
 
 - 🔐 Login / Logout with protected routes
