@@ -8,6 +8,14 @@
 A simple book management app to add, edit, delete, search and manage book availability — powered by React, Axios and Firebase Realtime Database.
 
 ---
+## Demo Images
+
+<div align="center">
+  <img src="assets/screenshotLogin.png" alt="Screenshot of the application login page">
+</div>
+<div align="center">
+  <img src="assets/screenshotHome.png" alt="Screenshot of the application home page">
+</div>
 
 ## ✨ Features
 
