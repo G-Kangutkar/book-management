@@ -15,10 +15,10 @@ A simple book management app to add, edit, delete, search and manage book availa
 ![Dashboard Page Screenshot](src/assets/screenshotHome.png)
 
 <div align="center">
-  <img src="/screenshotLogin.png" alt="Screenshot of the application login page">
+  <img src="https://github.com/G-Kangutkar/book-management/blob/main/public/ScreenshotLogin.png?raw=true" alt="Screenshot of the application login page">
 </div>
 <div align="center">
-  <img src="/screenshotHome.png" alt="Screenshot of the application home page">
+  <img src="https://github.com/G-Kangutkar/book-management/blob/main/public/ScreenshotHome.png?raw=true" alt="Screenshot of the application home page">
 </div>
 ## ✨ Features
 
