@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
 function Navbar({ searchTerm, setSearchTerm }) {
     const navigate = useNavigate();
 
+    const {logout} = useAuth();
+
+
     const handleLogout = () => {
+        logout()
         navigate("/");
         toast.success('🚀 Logged out successfully!');
     }

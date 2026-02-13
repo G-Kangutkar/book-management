@@ -22,7 +22,7 @@ A simple book management app to add, edit, delete, search and manage book availa
 
 ## ✨ Features
 
-- 🔐 Login / Logout with protected routes
+- 🔐 Login / Logout using firebase authentication with protected routes
 - ➕ Add, ✏️ Edit, 🗑️ Delete books
 - ✅ Toggle availability status
 - 🔍 Real-time search by title
@@ -36,7 +36,7 @@ A simple book management app to add, edit, delete, search and manage book availa
 |-|-----------|
 | ⚛️ | React 18 |
 | 🌐 | Axios |
-| 🔥 | Firebase Realtime Database |
+| 🔥 | Firebase Realtime Database and Authentication |
 | 🎨 | Tailwind CSS v4 |
 | 🚀 | Vite |
 
@@ -90,6 +90,51 @@ const response = await api.patch(`/books/${id}.json`, { author: 'New Name' });
 const response = await api.delete(`/books/${id}.json`);
 ```
 ---
+
+## Firebase Authentication
+
+```bash 
+npm install firebase
+```
+### Create a firebase Project
+- Go to Firebase Console
+
+- Click Add Project → Give it a name → Create
+
+- Click Web App (</>) → Register app → Copy Firebase config
+
+```bash
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+```
+### Enable Authentication Providers
+- Go to Authentication → Sign-in method
+
+- Enable:
+
+ *Email/Password*
+
+*Google (optional)*
+
+### Create Environment Variables
+
+
+Create a .env file at the project root
+
+```env
+VITE_API_KEY=YOUR_API_KEY
+VITE_AUTH_DOMAIN=YOUR_AUTH_DOMAIN
+VITE_PROJECT_ID=YOUR_PROJECT_ID
+VITE_STORAGE_BUCKET=YOUR_STORAGE_BUCKET
+VITE_MESSAGING_SENDER_ID=YOUR_MESSAGING_SENDER_ID
+VITE_APP_ID=YOUR_APP_ID
+```
 
 ## 📁 Project Structure
 

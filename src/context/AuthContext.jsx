@@ -1,31 +1,34 @@
-import { createContext, useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { createContext, useCallback, useContext, useState, useEffect } from "react";
+import { auth } from "../config/firebase.config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 
 const AuthContext = createContext();
 export const useAuth = ()=> useContext(AuthContext);
 const AuthProvider=({children})=>{
 
-    const [isLogin,setIsLogin]=useState(false);
-    const navigate = useNavigate();
 
-    const login = useCallback((email,password)=>{
-        if(email === 'admin@gmail.com' && password === 'admin123'){
-            setIsLogin(true);
-            return true;
-        }
+    const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    },[]);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+    return unsubscribe;
+  }, []);
 
-    const logout = useCallback(()=>{
-        setIsLogin(false);
-        navigate('/');
-    },[navigate]);
-
+  const logout = async () => {
+    await signOut(auth);
+    setCurrentUser(null);
+}
     return(
-        <AuthContext.Provider value={{isLogin,login,logout}}>
-            {children}
+        <AuthContext.Provider 
+        // value={{isLogin,login,logout}}
+        value={{ currentUser,loading, logout }}>
+            {/* {children} */}
+             {!loading && children}
         </AuthContext.Provider>
     )
 

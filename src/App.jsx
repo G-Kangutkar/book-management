@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard'
 import ProtectedRoute from './Components/ProtectedRoute'
 import { ToastContainer, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
+import Signup from './Pages/Signup'
  
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
                     transition={Bounce}
                 />
     <Routes>
-       
-      <Route path='/' element={<Login/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/' element={<Signup/>}/>
       {/* <Route path='/dashboard' element={<Dashboard/>} /> */}
       <Route path='/dashboard' element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
       
