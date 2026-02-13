@@ -118,9 +118,8 @@ const firebaseConfig = {
 
 - Enable:
 
- *Email/Password*
-
-*Google (optional)*
+  → *Email/Password*
+  → *Google (optional)*
 
 ### Create Environment Variables
 
@@ -141,9 +140,10 @@ VITE_APP_ID=YOUR_APP_ID
 ```
 src/
 ├── components/    # Navbar, BookCard, ProtectedRoute
-├── pages/         # Login, Dashboard
+├── pages/         # Login,Signup, Dashboard
 ├── services/      # axiosInstance.js, axiosService.js
 ├── context/       # AuthContext.jsx
+├── config/        # firebase.config.js   
 └── App.jsx
 ```
 

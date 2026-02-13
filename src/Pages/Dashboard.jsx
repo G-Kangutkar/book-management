@@ -112,6 +112,8 @@ function Dashboard (){
                         </div>
                     )}
                     {/* MODIFIED - Display filtered books */}
+                    <div>
+                        <h2 className="text-lg mt-0 sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-center">Book Information</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6">
                         {filteredBooks.map(book => (
                             <BookCard 
@@ -124,6 +126,8 @@ function Dashboard (){
                         ))}
 
                     </div>
+                    </div>
+                    
                      {/* ADDED - Empty state */}
                     {filteredBooks.length === 0 && (
                         <div className="text-center py-12">
