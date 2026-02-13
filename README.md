@@ -10,6 +10,11 @@ A simple book management app to add, edit, delete, search and manage book availa
 ---
 ## Demo Images
 
+<p align="center">
+  <img src="https://github.com/G-Kangutkar/book-management/blob/main/public/ScreenshotSignup.png?raw=true" alt="Screenshot of the application home page">
+</p>
+
+
 <p align="center" style={{margin-bottom:20px}}>
   <img src="https://github.com/G-Kangutkar/book-management/blob/main/public/ScreenshotLogin.png?raw=true" alt="Screenshot of the application login page">
 </p>
