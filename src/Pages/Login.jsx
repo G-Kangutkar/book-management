@@ -26,7 +26,8 @@ function Login() {
 
 
         <section className="flex justify-center min-h-screen items-center px-4 sm:px-6 lg:px-8">
-            <div className="bg-green-200 p-6 sm:p-10 md:p-16 lg:p-20 m-4 sm:m-6 md:m-8 lg:m-10 w-full sm:w-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl rounded-lg">
+            <div className="bg-green-200 p-6 sm:p-6 md:p-8 lg:p-8 m-4 sm:m-6 md:m-8 lg:m-10 w-full sm:w-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl rounded-lg">
+                <h2 className="text-lg text-center sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4">Book Management</h2>
                 <div className="w-full flex justify-center">
                     <div className="bg-green-800 text-center w-full max-w-sm p-6 sm:p-8 md:p-10 rounded-2xl flex flex-col items-center">
                         <form onSubmit={handleLogin}>
